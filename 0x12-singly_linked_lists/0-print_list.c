@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -13,10 +14,11 @@ size_t print_list(const list_t *h)
 
 	while (h)
 	{
-		if (!h->str)
-		printf("[0](nil)\n");
+		if (h->str == NULL)
+			printf("[0] (nil)\n");
 		else
-		printf("[%u]%s\n", h->len, h->str);
+			printf("[%d] %s\n", h->len, h->str);
+
 		h = h->next;
 		s++;
 	}
